@@ -1,0 +1,6 @@
+pipeline {
+    
+    agen none
+
+    
+}
