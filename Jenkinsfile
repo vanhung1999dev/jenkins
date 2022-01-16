@@ -3,10 +3,12 @@ pipeline {
     agen none
 
     stages {
-	
-	stage('test') {
-		echo "hello world"
-	}
-   }
+        stage('test') {
+            step {
+                echo "hello world"
+            }
+        }
+    }
+
     
 }
