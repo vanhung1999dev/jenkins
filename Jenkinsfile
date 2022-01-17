@@ -8,6 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
+                echo 'this is path to project'
                 sh 'pwd'
             }
         }
