@@ -8,8 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'hello world'
-                echo 'nothing to say'
+                sh 'pwd'
             }
         }
     }
