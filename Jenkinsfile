@@ -1,15 +1,10 @@
 pipeline {
-    
-    agen none
-
+    agent none 
     stages {
         stage('test') {
-            step {
-                echo "hello world"
-		echo "run jenkins"
+            steps {
+                echo 'hello world'
             }
         }
     }
-
-    
 }
