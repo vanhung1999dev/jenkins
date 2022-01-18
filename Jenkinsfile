@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "react-demo",
+        IMAGE_NAME = "react-demo"
         AUTHOR = "hungnv"
     }
 
