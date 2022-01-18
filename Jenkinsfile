@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:14-stretch-slim'}
+    }
     stages {
         stage('clone git') {
             steps {
@@ -7,9 +9,6 @@ pipeline {
             }
         }
         stage('test') {
-            agent {
-                docker { image 'node:14-stretch-slim'}
-            }
             steps {
                 echo 'version of nodejs'
                 sh 'node -v' 
