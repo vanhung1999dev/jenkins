@@ -7,9 +7,12 @@ pipeline {
             }
         }
         stage('test') {
+            agent {
+                docker { image 'node:14-stretch-slim'}
+            }
             steps {
-                echo 'this is path to project'
-                sh 'pwd'
+                echo 'version of nodejs'
+                sh 'node -v' 
             }
         }
     }
