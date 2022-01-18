@@ -10,7 +10,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'version of nodejs'
+                echo 'version'
                 sh 'node -v' 
             }
         }
