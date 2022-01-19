@@ -14,6 +14,7 @@ pipeline {
                 git 'https://github.com/vanhung1999dev/jenkins.git'
             }
         }
+
         stage('test') {
             steps {
                 sh 'node -v' 
@@ -21,10 +22,8 @@ pipeline {
                 sh 'npm run test'
             }
         }
+
         stage('build') {
-            when {
-                branch 'master'
-            }
             steps {
                  sh "docker build -t ${AUTHOR}:${IMAGE} . "
                  sh "docker image ls | grep ${DOCKER_IMAGE}"
