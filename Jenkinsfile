@@ -5,7 +5,6 @@ pipeline {
 
     environment {
         IMAGE = "react-demo"
-        AUTHOR = "hungnv"
     }
 
     stages {
@@ -25,11 +24,11 @@ pipeline {
 
         stage('build') {
             steps {
-                 sh "docker build -t ${AUTHOR}:${IMAGE} . "
+                 sh "docker build -t ${IMAGE} . "
                  sh "docker image ls | grep ${DOCKER_IMAGE}"
                   withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin'
-                    sh "docker push ${AUTHOR}:${IMAGE}"
+                    sh "docker push ${IMAGE}"
                 }
             }
         }
