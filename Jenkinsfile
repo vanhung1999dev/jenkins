@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         IMAGE = "react-demo"
-        AUTHOR = "hungnv/"
+        AUTHOR = "hungnv"
     }
 
     stages {
